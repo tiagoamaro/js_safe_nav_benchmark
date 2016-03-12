@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "benchmark": "^2.1.0",
+    "microtime": "^2.0.0"
+  },
+  "name": "js_safe_nav_benchmark",
+  "version": "1.0.0",
+  "description": "JS Save Navigation Benchmark",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagoamaro/js_safe_nav_benchmark.git"
+  },
+  "keywords": [
+    "benchmark",
+    "safe",
+    "navigation"
+  ],
+  "author": "Tiago Amaro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiagoamaro/js_safe_nav_benchmark/issues"
+  },
+  "homepage": "https://github.com/tiagoamaro/js_safe_nav_benchmark#readme"
+}
