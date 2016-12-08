@@ -1,4 +1,5 @@
 var Benchmark = require("benchmark");
+var _ = require("lodash");
 
 // Source: http://codereview.stackexchange.com/questions/72253/safe-navigating-function-for-nested-object-properties
 // Thanks to elclanrs
@@ -47,6 +48,12 @@ suite
   })
   .add('Use && not found', function() {
     return nested_object && nested_object.a && nested_object.a.b && nested_object.a.b.nothing;
+  })
+  .add('Lodash _.get found', function() {
+    return _.get(nested_object, 'a.b.c');
+  })
+  .add('Lodash _.get not found', function() {
+    return _.get(nested_object, 'a.b.nothing');
   })
   .on('cycle', function(event) {
     console.log(String(event.target));
