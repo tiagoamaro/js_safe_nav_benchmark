@@ -1,5 +1,5 @@
-var Benchmark = require("benchmark");
-var _ = require("lodash");
+import Benchmark from "benchmark";
+import _ from "lodash";
 
 // Source: http://codereview.stackexchange.com/questions/72253/safe-navigating-function-for-nested-object-properties
 // Thanks to elclanrs

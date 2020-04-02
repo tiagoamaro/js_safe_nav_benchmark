@@ -41,3 +41,6 @@ jspm_packages
 # Ignore lock files
 package-lock.json
 yarn.lock
+
+# Ignore Babel compiled files
+lib/
