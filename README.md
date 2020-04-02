@@ -11,4 +11,4 @@ Testing different methods of safe navigation in JS.
 
 - Clone this repository
 - `npm install`
-- `node src/app.js`
+- `npm run benchmark`
