@@ -31,29 +31,35 @@ var suite = new Benchmark.Suite();
 var nested_object = { a: {b: {c: 2} } };
 
 suite
-  .add('Object.walk found', function() {
+  .add('Object.walk found', () => {
     return Object.walk(nested_object, 'a.b.c');
   })
-  .add('Object.walk not found', function() {
+  .add('Object.walk not found', () => {
     return Object.walk(nested_object, 'a.b.nothing');
   })
-  .add('Object.reduce_attr found', function() {
+  .add('Object.reduce_attr found', () => {
     return Object.reduce_attr(nested_object, 'a.b.c');
   })
-  .add('Object.reduce_attr not found', function() {
+  .add('Object.reduce_attr not found', () => {
     return Object.reduce_attr(nested_object, 'a.b.nothing');
   })
-  .add('Use && found', function() {
+  .add('Use && found', () => {
     return nested_object && nested_object.a && nested_object.a.b && nested_object.a.b.c;
   })
-  .add('Use && not found', function() {
+  .add('Use && not found', () => {
     return nested_object && nested_object.a && nested_object.a.b && nested_object.a.b.nothing;
   })
-  .add('Lodash _.get found', function() {
+  .add('Lodash _.get found', () => {
     return _.get(nested_object, 'a.b.c');
   })
-  .add('Lodash _.get not found', function() {
+  .add('Lodash _.get not found', () => {
     return _.get(nested_object, 'a.b.nothing');
+  })
+  .add('Optional chain proposal ES proposal, found', () => { // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+    return nested_object?.a?.b?.c;
+  })
+  .add('Optional chain proposal ES proposal, not found', () => {
+    return nested_object?.a?.b?.nothing;
   })
   .on('cycle', function(event) {
     console.log(String(event.target));
